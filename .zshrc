@@ -105,3 +105,8 @@ source $ZSH/oh-my-zsh.sh
 alias kubectl="~/kubectl"
 alias vim="nvim" 
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+# insurance snap bin is in path
+if [ -d "/snap/bin" ] ; then
+	export PATH="/snap/bin:$PATH"
+fi
